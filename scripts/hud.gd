@@ -764,6 +764,7 @@ func on_place_mode(k: int) -> void:
 	btn_up.visible = false
 	btn_sell.visible = false
 	btn_mode.visible = false
+	info.offset_top = info.offset_bottom
 
 func _stat_line(td: Dictionary, s: Dictionary) -> String:
 	var id: String = td["id"]
@@ -827,6 +828,7 @@ func on_select(t) -> void:
 	btn_sell.text = "SELL $%d" % t.sell_value()
 	btn_mode.visible = not t.is_support()
 	btn_mode.text = "TARGET: %s" % D.TARGET_MODES[t.mode]
+	info.offset_top = info.offset_bottom
 
 func _draw_pips() -> void:
 	var t = main.sel_tower if main else null

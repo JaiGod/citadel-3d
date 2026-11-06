@@ -784,6 +784,7 @@ func try_place(k: int, pi: int) -> bool:
 	fx.ring(t.position + Vector3(0, 0.2, 0), data["color"], 1.8, 0.35)
 	sfx("place")
 	place_kind = -1
+	hud.on_place_mode(-1)
 	select_tower(t)
 	return true
 
