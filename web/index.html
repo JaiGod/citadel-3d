@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Citadel 3D — low-poly tower defense</title>
+<meta name="description" content="Citadel 3D: an original low-poly 3D tower defense made in Godot 4. 10 towers with 4 upgrades each, 10 enemy types, a 3-phase boss, 30 waves, 3 maps and endless mode. Free in your browser.">
+<link rel="icon" href="icon.svg">
+<style>
+:root{--bg:#0b1020;--panel:#151d33;--edge:#2f4478;--gold:#ffd452;--ink:#eef2ff;--dim:#a9b4d0;--blue:#62c8ff;--green:#5fd07a;--red:#ff6a5a}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:hidden}
+body{background:radial-gradient(ellipse at top,#1d2c55 0,var(--bg) 60%);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--blue)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{text-align:center;padding:42px 0 24px}
+.logo{font:900 clamp(46px,12vw,96px)/1 system-ui,sans-serif;letter-spacing:.04em;color:var(--gold);text-shadow:0 5px 0 #5a3108,0 0 40px #ffd45240;margin:0}
+.logo span{color:var(--blue);text-shadow:0 5px 0 #0a2a5a}
+.sub{letter-spacing:.42em;color:#dfe6ff;margin:10px 0 16px;font-size:13px}
+.tag{color:var(--dim);max-width:660px;margin:0 auto 24px}
+.play{display:inline-block;background:linear-gradient(#ffd76a,#f09a22);color:#2a1606;font-weight:800;font-size:22px;padding:16px 40px;border-radius:12px;text-decoration:none;box-shadow:0 6px 0 #8a4a0c,0 0 40px #ffb84a55;transition:transform .1s}
+.play:hover{transform:translateY(-2px)}.play:active{transform:translateY(3px);box-shadow:0 3px 0 #8a4a0c}
+.small{font-size:13px;color:var(--dim);margin-top:12px}
+.hero{margin:26px auto 0;max-width:880px}.hero img{width:100%;border:2px solid var(--edge);border-radius:12px;display:block}
+h2{color:var(--gold);font:800 26px system-ui,sans-serif;margin:44px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--panel);border:2px solid #26355e;border-radius:10px;padding:14px 16px}
+.card b{color:var(--gold)}.card p{margin:6px 0 0;color:var(--dim);font-size:14px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.shots img{width:100%;border:2px solid #26355e;border-radius:10px;display:block}
+.tw{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.tw div{background:var(--panel);border-left:4px solid var(--c,#62c8ff);padding:8px 10px;border-radius:6px;font-size:14px}.tw b{display:block}.tw span{color:var(--dim)}
+table{width:100%;border-collapse:collapse;font-size:14px}td{padding:6px 8px;border-bottom:1px solid #26355e;vertical-align:top}td:first-child{color:var(--gold);white-space:nowrap}
+footer{text-align:center;color:var(--dim);padding:40px 0 50px;font-size:14px}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1 class="logo">CITADEL <span>3D</span></h1>
+  <div class="sub">LOW-POLY TOWER DEFENSE</div>
+  <p class="tag">Hold the path between the portal and your Citadel. Build ten original towers on glowing pads, upgrade each one four times, juggle farms and firepower, and survive 30 waves ending with the three-phase Iron Tyrant. Made in Godot 4.</p>
+  <a class="play" href="play/">&#9654; Play in browser</a>
+  <div class="small">Free · no install · mouse, keyboard or touch · best waves save automatically</div>
+  <div class="hero"><img src="docs/screenshots/battle.jpg" alt="3D tower defense battlefield with towers and enemies" onerror="this.parentNode.style.display='none'"></div>
+</header>
+<main class="wrap">
+  <h2>Features</h2>
+  <div class="grid">
+    <div class="card"><b>Real 3D battlefield</b><p>Orbit, pan and zoom around low-poly maps built entirely from primitives, with shadows and particle effects.</p></div>
+    <div class="card"><b>10 towers × 5 levels</b><p>Every upgrade visibly changes the model: more barrels, taller plinths, rings, crowns and glowing cores.</p></div>
+    <div class="card"><b>Targeting modes</b><p>First, Last, Strongest, Weakest or Closest for every attacking tower.</p></div>
+    <div class="card"><b>Flying, stealth, armor</b><p>Wisps and Stormwings fly, Shades need detection, Shellbacks and Juggernauts shrug off small hits.</p></div>
+    <div class="card"><b>The Iron Tyrant</b><p>A three-phase boss: shields, summons guards, then enrages and fires EMP blasts that stun your towers.</p></div>
+    <div class="card"><b>3 maps + Endless</b><p>Greenvale Crossing, Frostline Pass and Cinder Forge, each with 30 waves and an endless mode.</p></div>
+    <div class="card"><b>Economy</b><p>Kill bounties, a bonus every wave and Harvest Mill farms that pay out each round. 1x / 2x / 3x speed.</p></div>
+    <div class="card"><b>Everything made in code</b><p>No imported models, textures or audio: meshes are primitives and every sound is synthesized.</p></div>
+  </div>
+  <h2>Towers</h2>
+  <div class="tw">
+    <div style="--c:#5cb85c"><b>Scout Post</b><span>Rapid rifle · sees stealth at lv2</span></div>
+    <div style="--c:#d98c38"><b>Bastion Cannon</b><span>Splash shells · ground</span></div>
+    <div style="--c:#4dccff"><b>Volt Coil</b><span>Chain lightning</span></div>
+    <div style="--c:#99d9ff"><b>Frost Spire</b><span>Area slow · lv4 freeze</span></div>
+    <div style="--c:#e64d59"><b>Skyhunter</b><span>Homing missiles · anti-air</span></div>
+    <div style="--c:#ff731a"><b>Ember Thrower</b><span>Fire stream + burn</span></div>
+    <div style="--c:#b373ff"><b>Lancer Rail</b><span>Sniper · ignores armor</span></div>
+    <div style="--c:#8c9966"><b>Mortar Pit</b><span>Huge range, big blasts</span></div>
+    <div style="--c:#f2cc4d"><b>Harvest Mill</b><span>Farm · cash every wave</span></div>
+    <div style="--c:#ff66cc"><b>Beacon Relay</b><span>Buffs range &amp; fire rate</span></div>
+  </div>
+  <h2>Screenshots</h2>
+  <div class="shots">
+    <img src="docs/screenshots/title.jpg" alt="Title screen" loading="lazy">
+    <img src="docs/screenshots/upgrades.jpg" alt="Tower upgrades" loading="lazy">
+    <img src="docs/screenshots/boss.jpg" alt="Boss fight" loading="lazy">
+    <img src="docs/screenshots/maps.jpg" alt="Map select" loading="lazy">
+  </div>
+  <h2>Controls</h2>
+  <table>
+    <tr><td>Build</td><td>Pick a tower in the bottom bar (keys 1-0), then click / tap a glowing pad</td></tr>
+    <tr><td>Manage</td><td>Click / tap a tower to upgrade (U), sell (X) or change targeting (T)</td></tr>
+    <tr><td>Camera</td><td>Drag to orbit, right-drag or two fingers to pan, wheel or pinch to zoom · WASD, Q/E, Z/C</td></tr>
+    <tr><td>Waves</td><td>Space starts or calls the next wave early · F cycles 1x/2x/3x speed</td></tr>
+    <tr><td>Other</td><td>Esc / P pause · M sound</td></tr>
+  </table>
+</main>
+<footer class="wrap">
+  <a href="https://github.com/JaiGod/citadel-3d">Source on GitHub</a> · <a href="https://github.com/JaiGod">More JaiGod games</a><br>
+  Made by Jaineil Rana (JaKing) · part of <a href="https://github.com/JaiGod">JaiGod</a> · MIT License
+</footer>
+</body>
+</html>
